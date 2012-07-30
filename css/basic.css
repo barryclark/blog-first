@@ -1,0 +1,104 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 9px;
+  font-size: 0.8em; }
+
+h1, h2, h3 {
+  margin: 0 0 3px;
+  font-family: inherit;
+  font-weight: bold;
+  text-rendering: optimizelegibility; }
+
+h1 {
+  font-size: 1.4em; }
+
+h2 {
+  font-size: 1.2em; }
+
+h3 {
+  font-size: 0.9em; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+body {
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222222;
+  border-top: solid 6px #00a0b0; }
+
+#header {
+  text-align: center;
+  max-width: 100%;
+  margin: 1.3em auto 0; }
+
+#access .menu ul {
+  text-align: center;
+  margin-bottom: 2.5em; }
+#access .menu li {
+  display: inline-block;
+  padding: 0 1.4em;
+  margin: 0 0 0.5em;
+  border-left: 1px solid #bbbbbb;
+  line-height: 1.2;
+  font-size: 1.05em; }
+#access .menu li:first-child {
+  border-left: none; }
+#access .menu li a {
+  color: #777777;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -ms-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out; }
+#access .menu li a:hover, #access .menu .current_page_item a {
+  color: #444444; }
+
+.content {
+  max-width: 94%;
+  margin: 0 auto; }
