@@ -16,7 +16,7 @@ get_header(); ?>
 
 					<h1><?php the_title(); ?></h1>
 
-						<?php twentyten_posted_on(); ?>
+						<div class="posted-on"><?php twentyten_posted_on(); ?></div>
 
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>

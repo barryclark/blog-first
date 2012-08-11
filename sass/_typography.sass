@@ -1,26 +1,39 @@
+
+// Variables
+$sansFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif
+$serifFontFamily: Georgia, "Times New Roman", Times, serif
+
+$baseFontSize: 18px
+$baseLineHeight: 26px
+
 // Body text
-p
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  margin: 0 0 9px
-  font-size: 0.8em
+body 
+  font-family: $sansFontFamily
+  font-size: $baseFontSize
+  line-height: $baseLineHeight
+  color: #222
+  p
+    margin: 0 0 $baseLineHeight/2
+  a
+    text-decoration: none
 
 // Headings
 h1, h2, h3
-  margin: 0 0 3px
   font-family: inherit
-  font-weight: bold
   text-rendering: optimizelegibility
-  
-h1
-  font-size: 1.4em
-
+    
+// Post headings
 h2
-  font-size: 1.2em
-  
-h3
-  font-size: 0.9em
+  font-size: $baseFontSize*1.5
+  font-weight: bold
+
+.posted-on
+  font-size: $baseFontSize/1.5
+  line-height: $baseLineHeight/1.5
+  color: #888
 
 // Lists
 
 
 // Misc
+

@@ -54,7 +54,7 @@
 
 	<?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
 			<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<?php twentyten_posted_on(); ?>
+			<div class="posted-on"><?php twentyten_posted_on(); ?></div>
 
 <?php if ( post_password_required() ) : ?>
 				<?php the_content(); ?>
@@ -90,7 +90,7 @@
 			<?php the_content( __( 'Continue reading &rarr;', 'twentyten' ) ); ?>
 		<?php endif; ?>
 
-				<?php twentyten_posted_on(); ?>
+				<div class="posted-on"><?php twentyten_posted_on(); ?></div>
 				|
 				<?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?>
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '| ', '' ); ?>
@@ -99,7 +99,7 @@
 
 	<?php else : ?>
 			<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<?php twentyten_posted_on(); ?>
+			<div class="posted-on"><?php twentyten_posted_on(); ?></div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<?php the_excerpt(); ?>
