@@ -1,19 +1,19 @@
 
 // Variables
-$sansFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif
-$serifFontFamily: Georgia, "Times New Roman", Times, serif
+$bodyFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif
+$headerFontFamily: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif
 
 $baseFontSize: 18px
-$baseLineHeight: 26px
+$baseLineHeight: 28px
 
 // Body text
 body 
-  font-family: $sansFontFamily
+  font-family: $bodyFontFamily
   font-size: $baseFontSize
-  line-height: $baseLineHeight
-  color: #222
+  line-height: 30px
   p
     margin: 0 0 $baseLineHeight/2
+    color: #272727
   a
     text-decoration: none
 
@@ -21,16 +21,21 @@ body
 h1, h2, h3
   font-family: inherit
   text-rendering: optimizelegibility
-    
+  font-family: $headerFontFamily
+  font-weight: bold
+  a
+    color: #171717
+
 // Post headings
 h2
-  font-size: $baseFontSize*1.5
-  font-weight: bold
+  font-size: $baseFontSize*1.3
+  line-height: $baseLineHeight*1.1
 
 .posted-on
   font-size: $baseFontSize/1.5
-  line-height: $baseLineHeight/1.5
-  color: #888
+  line-height: $baseLineHeight/1.2
+  color: #878787
+  margin: 0 0 0.8em
 
 // Lists
 

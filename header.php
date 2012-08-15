@@ -35,6 +35,7 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/basic.css" media="screen, handheld" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/mobile.css" media="only screen and (min-width: 320px) and (max-width: 640px)" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/desktop.css" media="only screen and (min-width: 640px)" />
+<link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/default.js"></script>
 
