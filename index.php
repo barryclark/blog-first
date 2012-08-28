@@ -30,5 +30,4 @@
 		<?php get_search_form(); ?>
 	<?php endif; ?>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

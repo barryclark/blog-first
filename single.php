@@ -19,5 +19,4 @@
 		<p>Sorry, no posts matched your criteria.</p>
 	<?php endif; ?>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
