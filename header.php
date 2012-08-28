@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/desktop.css" media="only screen and (min-width: 640px)" />
 
 <!-- JS -->
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/default.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
 
 <!-- Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>

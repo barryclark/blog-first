@@ -3,11 +3,12 @@
 
 // We might use a 'lil CSS3!
 @import "compass/css3"
+@import "compass/utilities/general/clearfix"
 
 // My Imports
+@import "variables.sass"
 @import "forms.sass"
 @import "typography.sass"
-
 
 img
   max-width: 100%
@@ -16,12 +17,22 @@ img
 body
   max-width: 640px
   margin: 0 auto  
-  border-top: solid 6px #00A0B0
+  border-top: solid 6px $blue
 
 header
   text-align: center
   max-width: 100%
   margin: 1.7em auto 0.3em
+
+footer
+  +clearfix
+  border-top: solid 3px $orange
+  background-color: $lighterGray
+  padding: 3%
+  .archives
+    float: left
+  .search 
+    float: right
 
 .menu
   ul
@@ -37,11 +48,11 @@ header
   li:first-child
     border-left: none
   li a
-    color: #777
+    color: $gray
     text-decoration: none
     @include transition(color 0.3s ease-out)
   li a:hover, .current_page_item a
-    color: #444
+    color: $darkGray
 
 .wrapper
   max-width: 94%
@@ -50,7 +61,7 @@ header
 // Specify the color of the selection
 ::-moz-selection 
   color: #000
-  background: #EDC951
+  background: $orange
 ::selection     
   color: #000
-  background: #EDC951
+  background: $orange
