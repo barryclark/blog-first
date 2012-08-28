@@ -228,7 +228,7 @@ add_filter( 'wp_title', 'twentyten_filter_wp_title', 10, 2 );
  * @since Twenty Ten 1.0
  */
 function twentyten_page_menu_args( $args ) {
-	$args['show_home'] = true;
+	$args['show_home'] = 'Blog';
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'twentyten_page_menu_args' );
