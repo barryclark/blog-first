@@ -1,33 +1,17 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content
- * after.  Calls sidebar-footer.php for bottom widgets.
- *
- * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.0
- */
-?>
+	<footer>	
+		<small>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></small>	
+	</footer>
+	
+	</div><!-- end .wrapper -->
+		
+	<!-- JavaScript -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/jquery-1.7.2.min.js"><\/script>')</script>
+	<script src="<?php bloginfo('template_url'); ?>/js/scripts.js"></script>
+    
+    <?php wp_footer(); ?>
 
-<?php
-	/* A sidebar in the footer? Yep. You can can customize
-	 * your footer with four columns of widgets.
-	 */
-	get_sidebar( 'footer' );
-?>
+	<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
 
-			<!--<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>-->
-			<a href="http://bazclark.com/" title="Mobile First Responsive Wordpress Blog Theme" rel="generator">Design by Baz Clark</a>
-
-<?php
-	/* Always have wp_footer() just before the closing </body>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to reference JavaScript files.
-	 */
-
-	wp_footer();
-?>
 </body>
 </html>

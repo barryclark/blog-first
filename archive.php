@@ -1,55 +1,69 @@
-<?php
-/**
- * The template for displaying Archive pages.
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<?php
-	/* Queue the first post, that way we know
-	 * what date we're dealing with (if that is the case).
-	 *
-	 * We reset this later so we can run the loop
-	 * properly with a call to rewind_posts().
-	 */
-	if ( have_posts() )
+	<?php if (have_posts()) : 
+		// AO: Calling the post to make the date work
 		the_post();
-?>
+	?>
 
-			<h1>
-<?php if ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: %s', 'twentyten' ), get_the_date() ); ?>
-<?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: %s', 'twentyten' ), get_the_date('F Y') ); ?>
-<?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: %s', 'twentyten' ), get_the_date('Y') ); ?>
-<?php else : ?>
-				<?php _e( 'Blog Archives', 'twentyten' ); ?>
-<?php endif; ?>
-			</h1>
+    	<?php if (is_category()) { ?>
+    	    <h1>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category</h1>
+    	<?php } elseif( is_tag() ) { ?>
+    	    <h1>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h1>
+    	<?php } elseif (is_day()) { ?>
+    	    <h1>Archive for <?php the_time('F jS, Y'); ?></h1>
+    	<?php } elseif (is_month()) { ?>
+    	    <h1>Archive for <?php the_time('F, Y'); ?></h1>
+    	<?php } elseif (is_year()) { ?>
+    	    <h1>Archive for <?php the_time('Y'); ?></h1>
+    	<?php } elseif (is_author()) { ?>
+    	    <h1>Author Archive</h1>
+    	<?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+    	    <h1>Blog Archives</h1>
+    	<?php } ?>
 
-<?php
-	/* Since we called the_post() above, we need to
-	 * rewind the loop back to the beginning that way
-	 * we can run the loop properly, in full.
-	 */
-	rewind_posts();
+		<?php 
+		// AO: Calling rewind to go back to the first post as we called it above to get the date to work
+		rewind_posts(); ?>
 
-	/* Run the loop for the archives page to output the posts.
-	 * If you want to overload this in a child theme then include a file
-	 * called loop-archives.php and that will be used instead.
-	 */
-	 get_template_part( 'loop', 'archive' );
-?>
+		<?php while (have_posts()) : the_post(); ?>
+			<article <?php post_class() ?>>
+				<h1 id="post-<?php the_ID(); ?>">
+				    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				</h1>
+				<time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('l, F jS, Y') ?></time>
+				<?php if (has_post_thumbnail()) { ?>
+			        <a href="<?php the_permalink() ?>">
+			            <?php
+	                	    $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium', false, '' );
+	                        echo '<img class="postThumb" src="'. $src[0] .'" />';
+	                    ?>
+	                </a>
+	            <?php } ?>
+	            <?php the_content() ?>
+				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+			</article>
+		<?php endwhile; ?>
+
+		<?php if (show_posts_nav()) : ?>
+			<nav class="nextPrevLinks">
+				<?php my_paginate_links(); ?>
+			</nav>
+		<?php endif; ?>
+
+	<?php else :
+
+		if ( is_category() ) {
+			printf("<h1>Sorry, but there aren't any posts in the %s category yet.</h1>", single_cat_title('',false));
+		} else if ( is_date() ) {
+			echo("<h1>Sorry, but there aren't any posts with this date.</h1>");
+		} else if ( is_author() ) {
+			$userdata = get_userdatabylogin(get_query_var('author_name'));
+			printf("<h1>Sorry, but there aren't any posts by %s yet.</h1>", $userdata->display_name);
+		} else {
+			echo("<h1>No posts found.</h1>");
+		}
+
+	endif; ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

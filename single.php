@@ -1,44 +1,23 @@
-<?php
-/**
- * The Template for displaying all single posts.
- *
- * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-					<?php previous_post_link( '%link', '' . _x( '&larr;', 'Previous post link', 'twentyten' ) . ' %title' ); ?>
-					<?php next_post_link( '%link', '%title ' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '' ); ?>
-
-					<h1><?php the_title(); ?></h1>
-
-						<div class="posted-on"><?php twentyten_posted_on(); ?></div>
-
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
-
-<?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
-							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 60 ) ); ?>
-							<h2><?php printf( esc_attr__( 'About %s', 'twentyten' ), get_the_author() ); ?></h2>
-							<?php the_author_meta( 'description' ); ?>
-							<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-								<?php printf( __( 'View all posts by %s &rarr;', 'twentyten' ), get_the_author() ); ?>
-							</a>
-<?php endif; ?>
-
-						<?php twentyten_posted_in(); ?>
-						<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
-
-				<?php previous_post_link( '%link', '' . _x( '&larr;', 'Previous post link', 'twentyten' ) . ' %title' ); ?>
-				<?php next_post_link( '%link', '%title ' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '' ); ?>
-
-				<?php comments_template( '', true ); ?>
-
-<?php endwhile; // end of the loop. ?>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php previous_post_link('&laquo; %link') ?> <?php next_post_link('%link &raquo;') ?>
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<h1><?php the_title(); ?></h1>
+			<?php if (has_post_thumbnail()) { ?>
+		        <a href="<?php the_permalink() ?>">
+		            <?php
+                	    $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium', false, '' );
+                        echo '<img class="postThumb" src="'. $src[0] .'" />';
+                    ?>
+                </a>
+            <?php } ?>
+            <?php the_content('<p>Read the rest of this entry &raquo;</p>'); ?>
+			<?php comments_template(); ?>
+		</article>
+	<?php endwhile; else: ?>
+		<p>Sorry, no posts matched your criteria.</p>
+	<?php endif; ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

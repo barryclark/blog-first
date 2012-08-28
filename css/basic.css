@@ -62,7 +62,7 @@ h2 {
   font-size: 23.4px;
   line-height: 30.8px; }
 
-.posted-on {
+time {
   font-size: 12px;
   line-height: 23.333px;
   color: #878787;
@@ -77,24 +77,24 @@ body {
   margin: 0 auto;
   border-top: solid 6px #00a0b0; }
 
-#header {
+header {
   text-align: center;
   max-width: 100%;
   margin: 1.7em auto 0.3em; }
 
-#access .menu ul {
+.menu ul {
   text-align: center;
   margin-bottom: 2.5em; }
-#access .menu li {
+.menu li {
   display: inline-block;
   padding: 0 1em;
   margin: 0 0 0.5em;
   border-left: 1px solid #bbbbbb;
   line-height: 1.2;
   font-size: 1em; }
-#access .menu li:first-child {
+.menu li:first-child {
   border-left: none; }
-#access .menu li a {
+.menu li a {
   color: #777777;
   text-decoration: none;
   -webkit-transition: color 0.3s ease-out;
@@ -102,10 +102,10 @@ body {
   -ms-transition: color 0.3s ease-out;
   -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out; }
-#access .menu li a:hover, #access .menu .current_page_item a {
+.menu li a:hover, .menu .current_page_item a {
   color: #444444; }
 
-.content {
+.wrapper {
   max-width: 94%;
   margin: 0 auto; }
 

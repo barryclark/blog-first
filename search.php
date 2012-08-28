@@ -1,28 +1,23 @@
-<?php
-/**
- * The template for displaying Search Results pages.
- *
- * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<?php if ( have_posts() ) : ?>
-				<h1><?php printf( __( 'Search Results for: %s', 'twentyten' ), '' . get_search_query() . '' ); ?></h1>
-				<?php
-				/* Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-search.php and that will be used instead.
-				 */
-				 get_template_part( 'loop', 'search' );
-				?>
-<?php else : ?>
-					<h2><?php _e( 'Nothing Found', 'twentyten' ); ?></h2>
-					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyten' ); ?></p>
-					<?php get_search_form(); ?>
-<?php endif; ?>
+	<?php if (have_posts()) : ?>
+		<h1>Search Results</h1>
+		<?php while (have_posts()) : the_post(); ?>
+			<article <?php post_class() ?>>
+				<h1 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+				<time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('l, F jS, Y') ?></time>
+				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+			</article>
+		<?php endwhile; ?>
+		<?php if (show_posts_nav()) : ?>
+			<nav class="nextPrevLinks">
+				<?php my_paginate_links(); ?>
+			</nav>
+		<?php endif; ?>
+	<?php else : ?>
+		<h2>No posts found. Try a different search?</h2>
+		<?php get_search_form(); ?>
+	<?php endif; ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
