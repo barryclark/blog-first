@@ -13,8 +13,8 @@
                     ?>
                 </a>
             <?php } ?>
-			<?php the_content('Read the rest of this entry &raquo;'); ?>
-			<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+			<?php the_content('(Read more...)'); ?>
+			<div class="comments-link"><?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></div>
 		</article>
 	<?php endwhile; ?>
 	

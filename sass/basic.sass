@@ -7,12 +7,15 @@
 
 // My Imports
 @import "variables.sass"
-@import "forms.sass"
 @import "typography.sass"
+@import "forms.sass"
 
 img
   max-width: 100%
   height: auto
+
+article img
+  @include box-shadow($lightGray 0px 2px 4px)
 
 body
   max-width: 640px
@@ -22,16 +25,18 @@ body
 header
   text-align: center
   max-width: 100%
-  margin: 1.7em auto 0.3em
+  margin: 1.2em auto 0.3em
 
 footer
   +clearfix
-  border-top: solid 3px $orange
-  background-color: $lighterGray
-  padding: 3%
+  border-bottom: solid 6px $blue
+  //@include background-image(linear-gradient(white, $lighterGray))
+  padding: 1% 3%
   .archives
     float: left
   .search 
+    float: left
+  h4
     float: right
 
 .menu
@@ -58,6 +63,33 @@ footer
   max-width: 94%
   margin: 0 auto
 
+article.post
+  margin-bottom: 40px
+
+.comments-link
+  max-width: 100%
+  padding-left: 2%
+  background-color: $lighterGray
+  font-size: 14px
+  @include border-radius(6px)
+  border: solid 1px $lightGray
+
+#commentList
+  margin-bottom: 20px
+  li.comment-item
+    @include box-shadow($lightGray 0px 2px 4px)
+    padding: 2%
+    margin: 0 0 10px
+    background-color: $lighterGray
+    @include border-radius(6px)
+  img.avatar
+    float: left
+    margin: 0 10px 10px 0
+    @include border-radius(4px)
+  .comment
+    font-size: 16px
+    color: $gray
+
 // Specify the color of the selection
 ::-moz-selection 
   color: #000
@@ -65,3 +97,4 @@ footer
 ::selection     
   color: #000
   background: $orange
+

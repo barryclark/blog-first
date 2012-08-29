@@ -1,1 +1,70 @@
- 
+article form,
+  @include box-shadow($lightGray 0px 2px 4px)
+  padding: 2%
+  margin: 0 0 10px
+  background-color: $lighterGray
+  @include border-radius(6px)
+  
+  .logged-in-as
+    font-size: 14px
+  
+  label
+    font-size: 14px
+    display: none
+  
+  input
+    font-size: 18px
+    border: solid 1px $lighterGray
+    padding: 4px
+    @include border-radius(4px)
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box 
+    margin-bottom: 5px
+
+  textarea
+    padding: 5px
+    width: 100% 
+    font-size: 18px
+    border: solid 1px $lighterGray
+    @include border-radius(4px)
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+.archives select
+  font-size: 16px
+
+.search form
+  input
+    font-size: 16px
+    vertical-align: top
+  button
+    padding: 1px 7px
+    vertical-align: top
+
+// Buttons
+button, .button
+  display: inline-block
+  padding: 4px 14px
+  margin-bottom: 0
+  font-size: 14px
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  background-color: $blue
+  color: $lighterGray
+  border: 1px solid $gray
+  border-bottom-color: darken($blue, 10%)
+  @include border-radius(8px)
+  @include box-shadow($lightGray 0px 2px 4px)
+
+  &:hover
+    text-decoration: none
+    background-color: lighten($blue, 3%)
+    background-position: 0 -15px
+    @include transition(background-position .2s linear)
+
+  &.active, &:active
+    background-color: lighten($blue, 5%)
+    outline: 0
