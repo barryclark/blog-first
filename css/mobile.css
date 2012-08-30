@@ -21,3 +21,9 @@ h4 {
 time {
   font-size: 13px;
   line-height: 13px; }
+
+.menu li {
+  padding: 0 0.8em; }
+.menu li a {
+  font-size: 18px;
+  line-height: 18px; }

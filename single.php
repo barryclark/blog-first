@@ -15,7 +15,6 @@
             <?php the_content('<p>Read the rest of this entry &raquo;</p>'); ?>
 			<?php comments_template(); ?>
 		</article>
-		<?php previous_post_link('&laquo; %link') ?> <?php next_post_link('%link &raquo;') ?>
 	<?php endwhile; else: ?>
 		<p>Sorry, no posts matched your criteria.</p>
 	<?php endif; ?>

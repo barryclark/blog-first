@@ -27,6 +27,11 @@ header .logo img {
 
 .menu ul {
   margin-bottom: 2.5em; }
+.menu li {
+  padding: 0 0.8em; }
+.menu li a {
+  font-size: 20px;
+  line-height: 20px; }
 
 article.post {
   margin-top: 2em; }

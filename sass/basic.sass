@@ -28,7 +28,7 @@ header
 
 footer
   +clearfix
-  margin-top: 20px
+  margin-top: 40px
   border-bottom: solid 6px $blue
   //@include background-image(linear-gradient(white, $lighterGray))
   padding: 1% 3%
@@ -56,12 +56,12 @@ article img
     display: inline-block
     padding: 0 1.0em
     margin: 0 0 .5em
-    border-left: 1px solid #bbb 
-    line-height: 1.2
-    font-size: 1em
+    border-left: 1px solid $lightGray 
   li:first-child
     border-left: none
   li a
+    font-size: 15px
+    line-height: 17px
     color: $gray
     text-decoration: none
     @include transition(color 0.3s ease-out)
@@ -81,7 +81,7 @@ article.post
     @include border-radius(6px)
     border: solid 1px #ddd
 
-#commentList
+.commentList
   margin-bottom: 20px
   li.comment-item
     @include box-shadow($lightGray 0px 2px 4px)

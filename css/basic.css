@@ -200,7 +200,7 @@ header {
 footer {
   overflow: hidden;
   *zoom: 1;
-  margin-top: 20px;
+  margin-top: 40px;
   border-bottom: solid 6px #00a0b0;
   padding: 1% 3%; }
   footer .archives {
@@ -230,12 +230,12 @@ article img {
   display: inline-block;
   padding: 0 1em;
   margin: 0 0 0.5em;
-  border-left: 1px solid #bbbbbb;
-  line-height: 1.2;
-  font-size: 1em; }
+  border-left: 1px solid #aaaaaa; }
 .menu li:first-child {
   border-left: none; }
 .menu li a {
+  font-size: 15px;
+  line-height: 17px;
   color: #777777;
   text-decoration: none;
   -webkit-transition: color 0.3s ease-out;
@@ -262,9 +262,9 @@ article.post {
     border-radius: 6px;
     border: solid 1px #dddddd; }
 
-#commentList {
+.commentList {
   margin-bottom: 20px; }
-  #commentList li.comment-item {
+  .commentList li.comment-item {
     -webkit-box-shadow: #aaaaaa 0px 2px 4px;
     -moz-box-shadow: #aaaaaa 0px 2px 4px;
     box-shadow: #aaaaaa 0px 2px 4px;
@@ -276,7 +276,7 @@ article.post {
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
     border-radius: 6px; }
-  #commentList img.avatar {
+  .commentList img.avatar {
     float: left;
     margin: 0 10px 10px 0;
     -webkit-border-radius: 4px;
@@ -284,7 +284,7 @@ article.post {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px; }
-  #commentList .comment {
+  .commentList .comment {
     font-size: 16px;
     color: #777777; }
 

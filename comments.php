@@ -11,7 +11,7 @@
 ?>
 
 <?php if (have_comments()) : ?>
-	    <ol id="commentList">
+	    <ol class="commentList">
 	<h2><?php comments_number('No Comments', 'One Comment', '% people have commented on this post' );?></h2>	<!-- View functions.php for comment markup -->
     <?php foreach ($comments as $comment) : ?>
 		<li class="comment-item">
@@ -41,7 +41,7 @@
 
 
 <?php if (comments_open()) : ?>
-	<h2 id="respond"><?php comment_form_title( 'Leave a comment', 'Leave a comment to %s' ); ?></h2>
+	<h2 id="respond"><?php comment_form_title( 'Speak up!', 'Leave a comment to %s' ); ?></h2>
 	<!--<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>-->
 	<?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
 		<p>You must be <a href="<?php echo wp_login_url(get_permalink()); ?>">logged in</a> to post a comment.</p>
