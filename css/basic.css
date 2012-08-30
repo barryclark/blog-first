@@ -85,8 +85,8 @@ h3 {
   line-height: 28px; }
 
 h4 {
-  font-size: 14.4px;
-  line-height: 22.4px; }
+  font-size: 12.6px;
+  line-height: 14px; }
 
 time {
   font-size: 12px;
@@ -181,19 +181,14 @@ button, .button {
     background-color: #00b7ca;
     outline: 0; }
 
-img {
-  max-width: 100%;
-  height: auto; }
-
-article img {
-  -webkit-box-shadow: #aaaaaa 0px 2px 4px;
-  -moz-box-shadow: #aaaaaa 0px 2px 4px;
-  box-shadow: #aaaaaa 0px 2px 4px; }
-
 body {
   max-width: 640px;
   margin: 0 auto;
   border-top: solid 6px #00a0b0; }
+
+.wrapper {
+  max-width: 94%;
+  margin: 0 auto; }
 
 header {
   text-align: center;
@@ -203,18 +198,28 @@ header {
 footer {
   overflow: hidden;
   *zoom: 1;
+  margin-top: 20px;
   border-bottom: solid 6px #00a0b0;
   padding: 1% 3%; }
   footer .archives {
     float: left; }
   footer .search {
-    float: left; }
+    display: none; }
   footer h4 {
     float: right; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
+article img {
+  -webkit-box-shadow: #aaaaaa 0px 2px 4px;
+  -moz-box-shadow: #aaaaaa 0px 2px 4px;
+  box-shadow: #aaaaaa 0px 2px 4px; }
+
 .menu ul {
   text-align: center;
-  margin-bottom: 2.5em; }
+  margin-bottom: 1.5em; }
 .menu li {
   display: inline-block;
   padding: 0 1em;
@@ -233,26 +238,23 @@ footer {
   -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out; }
 .menu li a:hover, .menu .current_page_item a {
-  color: #444444; }
-
-.wrapper {
-  max-width: 94%;
-  margin: 0 auto; }
+  color: #222222; }
+.menu .current_page_item a {
+  color: #222222;
+  font-weight: 500; }
 
 article.post {
-  margin-bottom: 40px; }
-
-.comments-link {
-  max-width: 100%;
-  padding-left: 2%;
-  background-color: #eeeeee;
-  font-size: 14px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
-  border: solid 1px #aaaaaa; }
+  margin-top: 2em; }
+  article.post .comments-link a, article.post .more-link {
+    padding: 1% 2%;
+    background-color: #eeeeee;
+    font-size: 14px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    border: solid 1px #dddddd; }
 
 #commentList {
   margin-bottom: 20px; }
@@ -279,6 +281,25 @@ article.post {
   #commentList .comment {
     font-size: 16px;
     color: #777777; }
+
+.pagination {
+  overflow: hidden;
+  *zoom: 1;
+  margin-top: 1em;
+  max-width: 100%;
+  padding: 0 2%;
+  background-color: #eeeeee;
+  font-size: 14px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  border: solid 1px #dddddd; }
+  .pagination .older {
+    float: right; }
+  .pagination .newer {
+    float: left; }
 
 ::-moz-selection {
   color: black;

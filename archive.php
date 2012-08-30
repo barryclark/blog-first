@@ -28,7 +28,7 @@
 		<?php while (have_posts()) : the_post(); ?>
 			<article <?php post_class() ?>>
 				<h1 id="post-<?php the_ID(); ?>">
-				    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				    <?php the_title(); ?>
 				</h1>
 				<time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('l, F jS, Y') ?></time>
 				<?php if (has_post_thumbnail()) { ?>
