@@ -1,8 +1,7 @@
-# Slim Starkers
+# Blog First
+* A minimal mobile first responsive theme for simple blogs
+* basic.css is called first, mobile.css is only called if the screenwidth is between 320px and 640px wide, desktop.css is called if the screenwidth is over 640px wide.
+* SASS/Compass is all there in /SASS if you'd like to use it, and a Compass config.rb is all set up
+* Uses Slim Starkers base, by Paul Adam Davis. Love it!
 
-* A super simple theme, that has just what you need in the template files.
-* No need to do a clear out before you start coding.
-* Any styling is purely optional and can be removed easily.
-* The `functions.php` file is full of power. Explore!
-
-Maintained by [Paul Adam Davis](http://codebymonkey.com), but loved by many.
+Maintained by [Barry Clark](http://bazclark.com/mobile-first) feedback is welcomed!

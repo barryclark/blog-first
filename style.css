@@ -1,6 +1,13 @@
 /*
-Theme Name: Slim Starkers
-Description: Blank WP theme by Code by Monkey
-Author: Paul Adam Davis
-Author URI: http://codebymonkey.com
+Theme Name: Blog First
+Description: A minimal mobile first responsive blog theme
+Author: Barry Clark
+Author URI: http://bazclark.com/blog-first
+*/
+
+/*
+No CSS here! Styling can be found in /CSS. 
+
+SASS & Compass can be found in /SASS 
+... if you're into that sort of thing.
 */

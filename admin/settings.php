@@ -1,29 +1,29 @@
 <?php
 
     // create custom plugin settings menu
-    add_action('admin_menu', 'slim_create_menu');
+    add_action('admin_menu', 'blog_first_create_menu');
 
-    function slim_create_menu() {
+    function blog_first_create_menu() {
         //create new top-level menu
-        add_menu_page('Slim Settings', 'Slim Settings', 'administrator', __FILE__, 'slim_settings_page');
+        add_menu_page('Blog First Settings', 'Blog First Settings', 'administrator', __FILE__, 'blog_first_settings_page');
         //call register settings function
         add_action( 'admin_init', 'register_mysettings' );
     }
 
     function register_mysettings() {
         //register our settings
-        register_setting( 'slim_settings_group', 'slim_ga_tracking_code' );
+        register_setting( 'blog_first_settings_group', 'blog_first_ga_tracking_code' );
     }
 
-    function slim_settings_page() { ?>
+    function blog_first_settings_page() { ?>
         <div class="wrap">
-            <h2>Slim Settings</h2>
+            <h2>Blog First Settings</h2>
             <form method="post" action="options.php">
-                <?php settings_fields('slim_settings_group'); ?>
+                <?php settings_fields('blog_first_settings_group'); ?>
                 <table class="form-table">
                     <tr valign="top">
                         <th scope="row">Google Tracking Code</th>
-                        <td><input name="slim_ga_tracking_code" value="<?php echo get_option('slim_ga_tracking_code'); ?>" /></td>
+                        <td><input name="blog_first_ga_tracking_code" value="<?php echo get_option('blog_first_ga_tracking_code'); ?>" /></td>
                     </tr>
                 </table>
                 <p class="submit">
