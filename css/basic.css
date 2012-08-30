@@ -48,10 +48,10 @@ table {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 30px; }
+  font-size: 14px;
+  line-height: 22px; }
   body p {
-    margin: 0 0 14px;
+    margin: 0 0 13px;
     color: #272727; }
   body a {
     text-decoration: none;
@@ -73,20 +73,20 @@ h1, h2, h3 {
     color: #171717; }
 
 h1 {
-  font-size: 25.2px;
-  line-height: 30.8px; }
+  font-size: 18px;
+  line-height: 22px; }
 
 h2 {
-  font-size: 19.8px;
-  line-height: 30.8px; }
+  font-size: 16px;
+  line-height: 18px; }
 
 h3 {
-  font-size: 18px;
-  line-height: 28px; }
+  font-size: 14px;
+  line-height: 16px; }
 
 h4 {
-  font-size: 12.6px;
-  line-height: 14px; }
+  font-size: 13px;
+  line-height: 13px; }
 
 time {
   font-size: 12px;
@@ -194,6 +194,8 @@ header {
   text-align: center;
   max-width: 100%;
   margin: 1.2em auto 0.3em; }
+  header .logo img {
+    max-width: 75%; }
 
 footer {
   overflow: hidden;
@@ -206,11 +208,16 @@ footer {
   footer .search {
     display: none; }
   footer h4 {
-    float: right; }
+    text-align: center; }
 
 img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px; }
 
 article img {
   -webkit-box-shadow: #aaaaaa 0px 2px 4px;
@@ -218,8 +225,7 @@ article img {
   box-shadow: #aaaaaa 0px 2px 4px; }
 
 .menu ul {
-  text-align: center;
-  margin-bottom: 1.5em; }
+  text-align: center; }
 .menu li {
   display: inline-block;
   padding: 0 1em;
@@ -244,8 +250,8 @@ article img {
   font-weight: 500; }
 
 article.post {
-  margin-top: 2em; }
-  article.post .comments-link a, article.post .more-link {
+  margin-top: 1em; }
+  article.post .comments-link a {
     padding: 1% 2%;
     background-color: #eeeeee;
     font-size: 14px;

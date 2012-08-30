@@ -1,0 +1,32 @@
+body {
+  font-size: 20px;
+  line-height: 30px; }
+
+h1 {
+  font-size: 24px;
+  line-height: 28px; }
+
+h2 {
+  font-size: 20px;
+  line-height: 28px; }
+
+h3 {
+  font-size: 18px;
+  line-height: 20px; }
+
+h4 {
+  font-size: 14px;
+  line-height: 14px; }
+
+time {
+  font-size: 14px;
+  line-height: 14px; }
+
+header .logo img {
+  max-width: 100%; }
+
+.menu ul {
+  margin-bottom: 2.5em; }
+
+article.post {
+  margin-top: 2em; }
