@@ -1,18 +1,24 @@
 <?php
 
     // Show all errors, without needing to go back to wp-config.php
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
-
+    //error_reporting(E_ALL);
+    //ini_set('display_errors', '1');
 
     // Settings page
     require_once "admin/settings.php";
 
+    register_sidebar(array('sidebar1' => 'Sidebar 1'));
+
+    /**
+     * Set the content width based on the theme's design and stylesheet.
+    */
+    if ( ! isset( $content_width ) )
+        $content_width = 601.6;
 
      // Add support
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
-
+    add_theme_support('automatic-feed-links');
 
     // If page needs pagination nav, return true
     function show_posts_nav() {
@@ -89,6 +95,24 @@
         return $string;
     }
 
+    
+    // Callback for wp_list_comments() in comments.php
+    function blogfirst_comment($comment, $args, $depth ) { 
+            
+        $GLOBALS['comment'] = $comment; ?>
+
+        <li class="comment-item">
+            <a class="comment-item-gravatar" href="<?php comment_author_url(); ?>"><?php echo get_avatar($comment, 80); ?></a>
+            <div class="comment">
+                <span class="author"><?php comment_author_link() ?> - <?php comment_date('F jS, Y') ?></span>
+                <div class="comment-text"><?php if ($comment->comment_approved == '0') : ?>
+                <p>Your comment is awaiting moderation.</p>
+                <?php endif; ?>
+                <?php comment_text() ?>
+            </div>
+            </div>
+        </li>
+    <?php }
 
     /*****
         Hide Admin Bar in WP 3.1

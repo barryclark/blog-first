@@ -12,7 +12,7 @@
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
 <link rel="apple-touch-icon" href="images/shortcut.png" />
 
-<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?> — <?php bloginfo('description'); ?></title>
 
 <!-- Make the HTML5 elements work in IE. -->
 <!--[if IE]>
@@ -34,20 +34,6 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
 
-<!-- Google Analytics -->
-<?php $slim_ga_tracking_code = get_option('slim_ga_tracking_code'); if ($slim_ga_tracking_code) : ?>
-<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', '<?php echo $slim_ga_tracking_code; ?>']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-</script>
-<?php endif; ?>
-
 </head>
 
 <body <?php body_class(); ?>>
@@ -55,8 +41,7 @@
 	<div class="wrapper">
 	    		
 	<header>
-	    
-	    <a class="logo" href="<?php bloginfo('home'); ?>/">
+	    <a class="logo" href="<?php echo home_url(); ?>/">
 	    	<img src="<?php bloginfo('template_directory'); ?>/images/logo.png" />
 	    </a>
   			<?php /* I'LL NEED TO PUT THIS BACK IN LATER IN PLACE OF THE IMAGE

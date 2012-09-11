@@ -10,24 +10,11 @@
 	
 ?>
 
+
 <?php if (have_comments()) : ?>
+	    <h2><?php comments_number('No Comments', 'One Comment', '% people have commented on this post' );?></h2>
 	    <ol class="commentList">
-	<h2><?php comments_number('No Comments', 'One Comment', '% people have commented on this post' );?></h2>	<!-- View functions.php for comment markup -->
-    <?php foreach ($comments as $comment) : ?>
-		<li class="comment-item">
-			<a class="comment-item-gravatar" href="<?php comment_author_url(); ?>"><?php echo get_avatar($comment, 80); ?></a>
-			<div class="comment">
-				<span class="author"><?php comment_author_link() ?> - <?php comment_date('F jS, Y') ?></span>
-				<div class="comment-text"><?php if ($comment->comment_approved == '0') : ?>
-				<p>Your comment is awaiting moderation.</p>
-				<?php endif; ?>
-				<?php comment_text() ?>
-			</div>
-			</div>
-		</li>
-	<?php
-		endforeach; // end for each comment
-	?>
+	    	<?php wp_list_comments( array( 'callback' => 'blogfirst_comment' ) ); ?> 
         </ol>	
 	<?php previous_comments_link() ?> <?php next_comments_link() ?>
 <?php else : // this is displayed if there are no comments so far ?>
@@ -45,24 +32,17 @@
 	<!--<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>-->
 	<?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
 		<p>You must be <a href="<?php echo wp_login_url(get_permalink()); ?>">logged in</a> to post a comment.</p>
-	<?php else : ?>
-		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-			<?php if (is_user_logged_in()) : ?>
-				<span class="logged-in-as">You are logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>.</span>
-			<?php else : ?>
-				<label for="author">Name (required)</label>
-				<input type="text" name="author" id="author" placeholder="Name (required)" size="22" tabindex="1" required />
-				
-				<label for="email">Email (required - will not be published)</label></br>
-				<input type="email" name="email" id="email" placeholder="Email (required)" size="22" tabindex="2" required /></br>
-				
-				<label for="url">Website</label>
-				<input type="url" name="url" id="url" placeholder="Your website" size="22" tabindex="3" /></br>
-			<?php endif; ?>
-			<textarea name="comment" id="comment" cols="100%" rows="6" tabindex="4" placeholder="Type your comment here..."></textarea>
-			<button type="submit" name="submit" id="send" tabindex="5">Submit Comment</button>
-			<?php comment_id_fields(); ?>
-			<?php do_action('comment_form', $post->ID); ?>
-		</form>
+	<?php else :
+		$comments_args = array(
+	        // change the title of send button 
+	        'title_reply'=>'',
+	        'label_submit'=>'Submit comment',
+	        'logged_in_as'=>'<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>.' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+	        // remove "Text or HTML to be displayed after the set of comment fields"
+	        'comment_notes_after' => '',
+	        // redefine the textarea (comment body)
+	        'comment_field' => '<textarea name="comment" id="comment" cols="100%" rows="6" placeholder="Type your comment here..."></textarea>',
+        ); 
+		comment_form($comments_args); ?>
 	<?php endif; ?>
 <?php endif; ?>

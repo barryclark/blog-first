@@ -13,6 +13,7 @@
                 </a>
             <?php } ?>
             <?php the_content('<p>Read the rest of this page &raquo;</p>'); ?>
+            <?php wp_link_pages( 'before=<p class="link-pages">Page: ' ); ?>
 		</article>
 	<?php endwhile; endif; ?>
 	
