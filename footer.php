@@ -26,7 +26,7 @@
 		</div>
 
 		<!-- This theme took a lot of my time to build, if you like it please give me a shout out. It's much appreciated! -->
-		<h4>Powered by <a target="_blank" href="http://bazclark.com/blog-first">Blog First</a> by <a target="_blank" href="http://twitter.com/bazclef">Baz Clark</a></h4>
+		<h4>Powered by <a target="_blank" href="https://github.com/bazclark/blog-first/">Blog First</a></h4>
 		
 		<!--<small>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></small>-->	
 	</footer>

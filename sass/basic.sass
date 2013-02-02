@@ -61,22 +61,25 @@ article img
   li:first-child
     border-left: none
   li a
+    font-family: $headerFontFamily
     font-size: 15px
     line-height: 17px
     color: $gray
     text-decoration: none
+    font-weight: 300
     @include transition(color 0.3s ease-out)
   li a:hover, .current_page_item a
     color: $darkerGray
   .current_page_item a
     color: $darkerGray
-    font-weight: 500
+    //font-weight: 500
 
 article.post
   //margin-bottom: 40px
   margin-top: 1em
   .comments-link a
     padding: 1% 2%
+    font-family: $headerFontFamily
     background-color: $lighterGray
     font-size: 14px
     @include border-radius(6px)

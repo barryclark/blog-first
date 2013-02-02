@@ -22,6 +22,22 @@
 <!-- WP Includes -->
 <?php wp_head(); ?>
 
+<!-- Google Analytics Tracking -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2530088-4']);
+  _gaq.push(['_setDomainName', 'bazclark.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/basic.css" media="screen, handheld" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/mobile.css" media="only screen and (min-width: 320px) and (max-width: 640px)" />
@@ -31,8 +47,6 @@
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
 
 <!-- Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
 
 </head>
 
