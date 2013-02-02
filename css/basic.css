@@ -89,6 +89,9 @@ time {
   vertical-align: text-top;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+strong, b {
+  font-weight: 600; }
+
 article form {
   -webkit-box-shadow: #aaaaaa 0px 2px 4px;
   -moz-box-shadow: #aaaaaa 0px 2px 4px;
@@ -214,6 +217,24 @@ article img {
   -webkit-box-shadow: #aaaaaa 0px 2px 4px;
   -moz-box-shadow: #aaaaaa 0px 2px 4px;
   box-shadow: #aaaaaa 0px 2px 4px; }
+
+article img.noshadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 0.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 0.5em; }
+
+.wp-caption-text {
+  font-size: 17px; }
 
 .menu ul {
   text-align: center; }

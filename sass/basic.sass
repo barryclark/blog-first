@@ -50,6 +50,20 @@ img
 article img
   @include box-shadow($lightGray 0px 2px 4px)
 
+article img.noshadow
+  @include box-shadow(none)
+
+.alignleft
+  display: inline
+  float: left
+  margin-right: 0.5em
+.alignright
+  display: inline
+  float: right
+  margin-left: 0.5em
+.wp-caption-text
+  font-size: 17px
+
 .menu
   ul
     text-align: center

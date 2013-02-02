@@ -68,6 +68,7 @@
 			    'menu' => 'Header',
 			    'container' => '',
 			    'show_home' => 'Blog',
+			    'exclude' => '1175, 1177, 3, 4',
 			    'items_wrap' => '%3$s'
 			)); ?>
 		</nav>
