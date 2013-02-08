@@ -41,7 +41,7 @@
 	            <?php } ?>
 	            <?php the_content() ?>
 	            <?php wp_link_pages( 'before=<p class="link-pages">Page: ' ); ?>
-	            <div class="comments-link"><?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></div>
+	            <div class="comments-link"><?php //comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></div>
 			</article>
 		<?php endwhile; ?>
 

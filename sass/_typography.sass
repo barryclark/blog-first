@@ -1,11 +1,13 @@
-
 // Body text
 body 
-  font-family: $bodyFontFamily
-  font-size: 14px
-  line-height: 22px
+  font-family: $serif
+  font-size: 1.1em
+  line-height: 1.4em
+  @include full-width
+    font-size: 1.3em //21px
+    line-height: 1.6em //32px
   p
-    margin: 0 0 13px
+    margin: 0 0 0.6em // 13px
     color: #272727
   a
     text-decoration: none
@@ -15,40 +17,59 @@ body
       @include transition(color .1s linear)
 
 // Headings
-h1, h2, h3
-  font-family: inherit
+h1, h2
+  font-family: $sansSerif
   text-rendering: optimizelegibility
-  font-family: $headerFontFamily
   font-weight: 300
   letter-spacing: -1px
   a
     color: #171717
+  a:hover
+    color: #171717
 
 // Post headings
 h1  
-  font-size: 28px
-  line-height: 32px
+  font-size: 1.3em
+  line-height: 1.2em
+  margin-bottom: 5px
+  @include full-width
+    font-size: 1.45em
+    line-height: 1.25em
 
+// ???
 h2  
-  font-size: 16px
-  line-height: 18px
+  font-size: 1.0em
+  line-height: 1.1em
+  @include full-width
+    font-size: 1.1em
+    line-height: 1.2em
 
+// For use within blog posts
 h3  
-  font-size: 14px
-  line-height: 16px
+  font-size: 0.9em
+  line-height: 1.0em
+  @include full-width
+    font-size: 1em
+    line-height: 1.1em
 
 // Footer
-h4
-  font-size: 13px
-  line-height: 13px
+footer h4
+  font-size: 0.6em
+  line-height: 0.6em
+  @include full-width
+    font-size: 0.7em
+    line-height: 0.7em
+
+// For use within blog posts
+h4, strong, b
+  font-weight: 600
 
 // Post timestamps
 time
-  font-size: 12px
-  line-height: 12px
   color: #878787
   vertical-align: text-top
-  font-family: $headerFontFamily
-
-strong, b
-  font-weight: 600
+  font-size: 0.7em
+  line-height: 0.7em
+  // @include full-width
+  //   font-size: 0.7em
+  //   line-height: 0.7em

@@ -1,5 +1,4 @@
-// Colour palette - Ocean Five by DESIGNJUNKEE 
-// src: www.colourlovers.com/palette/1473/Ocean_Five
+// Colour palette - Ocean Five by DESIGNJUNKEE — www.colourlovers.com/palette/1473/Ocean_Five
 $blue: #00A0B0
 $brown: #6A4A3C
 $red: #CC333F
@@ -16,5 +15,13 @@ $lighterGray: #eee
 $white: #fff
 
 // Font stacks
-$bodyFontFamily: Cambria, Georgia, serif
-$headerFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif
+$serif: Cambria, Georgia, serif
+$sansSerif: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+// Define the full width of the content area, including margins
+$full-width: 32em !default
+ 
+// Media query specifications
+@mixin full-width
+  @media screen and (min-width: $full-width)
+    @content

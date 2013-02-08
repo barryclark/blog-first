@@ -1,0 +1,215 @@
+// Load in Eric Meyer's CSS reset
+@import "reset.sass"
+
+// Load in Compass assets
+@import "compass/css3"
+@import "compass/utilities/general/clearfix"
+
+// My Imports
+@import "variables.sass"
+@import "typography.sass"
+@import "forms.sass"
+
+html
+  border-top: solid 6px $blue
+  border-bottom: solid 6px $blue
+ 
+body
+  max-width: $full-width
+  margin: 0 auto  
+
+.wrapper
+  max-width: 94%
+  margin: 0 auto
+
+header
+  text-align: center
+  max-width: 100%
+  margin: 1.2em auto 0.3em
+  .logo img
+    max-width: 100% 
+    @include full-width
+      max-width: 75%
+
+footer
+  +clearfix
+  margin-top: 40px  
+  //@include background-image(linear-gradient(white, $lighterGray))
+  padding: 1% 3%
+  .archives
+    float: left
+  .search 
+    display: none
+  h4
+    text-align: center
+
+img
+  max-width: 100%
+  height: auto
+  @include border-radius(3px)
+img.size-full
+  width: $full-width
+
+article img
+  @include box-shadow($lightGray 0px 1px 2px)
+
+article img.noshadow
+  @include box-shadow(none)
+
+.alignleft
+  display: inline
+  float: left
+  margin-right: 0.5em
+
+.alignright
+  display: inline
+  float: right
+  margin-left: 0.5em
+.wp-caption-text
+  font-size: 17px
+
+// .menu
+//   ul
+//     text-align: center
+//   li
+//     display: inline-block
+//     padding: 0 1.0em
+//     margin: 0 0 .5em
+//     border-left: 1px solid $lightGray 
+//   li:first-child
+//     border-left: none
+//   li a
+//     //font-family: $headerFontFamily
+//     font-size: 15px
+//     line-height: 17px
+//     color: $gray
+//     text-decoration: none
+//     font-weight: 300
+//     @include transition(color 0.3s ease-out)
+//   li a:hover, .current_page_item a
+//     color: $darkerGray
+//   .current_page_item a
+//     color: $darkerGray
+//     //font-weight: 500
+
+article.post
+  //margin-bottom: 40px
+  margin-top: 1em
+  // .comments-link a
+  //   padding: 1% 2%
+  //   //font-family: $headerFontFamily
+  //   background-color: $lighterGray
+  //   font-size: 14px
+  //   @include border-radius(6px)
+  //   border: solid 1px #ddd
+
+// .commentList
+//   margin-bottom: 20px
+//   li.comment-item
+//     @include box-shadow($lightGray 0px 2px 4px)
+//     padding: 2%
+//     margin: 0 0 10px
+//     background-color: $lighterGray
+//     @include border-radius(6px)
+//   img.avatar
+//     float: left
+//     margin: 0 10px 10px 0
+//     @include border-radius(4px)
+//   .comment
+//     font-size: 16px
+//     color: $gray
+
+.pagination
+  +clearfix
+  margin-top: 1em
+  max-width: 100%
+  padding: 0 2%
+  background-color: $lighterGray
+  font-size: 14px
+  @include border-radius(6px)
+  border: solid 1px #ddd
+  .older
+    float: right
+  .newer
+    float: left
+
+// Specify the color of the selection
+::-moz-selection 
+  color: #000
+  background: $orange
+::selection     
+  color: #000
+  background: $orange
+
+//
+// Wordpress wanted these styles included. 
+//   I don't use them. Feel free to uncomment them if you do. 
+//     Not guaranteeing they'll work, they'll need a code review.
+//
+
+// // Alignment 
+// .alignleft 
+//   display: inline
+//   float: left
+//   margin-right: 1.625em
+
+// .alignright 
+//   display: inline
+//   float: right
+//   margin-left: 1.625em
+
+// .aligncenter 
+//   clear: both
+//   display: block
+//   margin-left: auto
+//   margin-right: auto
+
+// .left
+//   float: left
+
+// .right
+//   float: right
+
+// // Captions 
+// .wp-caption
+//   margin-top: 0.4em
+//   background: #eee
+//   margin-bottom: 1.625em
+//   max-width: 96%
+//   padding: 9px
+
+// .wp-caption img 
+//   display: block
+//   margin: 0 auto
+//   max-width: 98%
+
+// .wp-caption .wp-caption-text, .gallery-caption 
+//   color: #666
+//   font-family: Georgia, serif
+//   font-size: 12px
+
+// .wp-caption .wp-caption-text 
+//   margin-bottom: 0.6em
+//   padding: 10px 0 5px 40px
+//   position: relative
+
+// .blog .sticky .entry-header .entry-meta 
+//   clip: rect(1px 1px 1px 1px)
+//   clip: rect(1px, 1px, 1px, 1px)
+//   //position: absolute !important
+
+// // Post author highlighting
+// .commentlist > li.bypostauthor 
+//   background: #ddd
+//   border-color: #d3d3d3
+
+// .commentlist > li.bypostauthor .comment-meta 
+//   color: #575757
+
+// // Post Author threaded comments
+// .commentlist .children > li.bypostauthor
+//   background: #ddd
+//   border-color: #d3d3d3
+
+// .link-pages
+//   clear: both

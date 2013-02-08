@@ -3,7 +3,7 @@
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<h1><?php the_title(); ?></h1>
+			<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			<time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('F jS, Y') ?></time> <!-- by <?php the_author() ?> -->
 			<?php if (has_post_thumbnail()) { ?>
 		        <a href="<?php the_permalink() ?>">
@@ -15,7 +15,7 @@
             <?php } ?>
 			<?php the_content('Read more...'); ?>
 			<?php wp_link_pages( 'before=<p class="link-pages">Page: ' ); ?>
-			<div class="comments-link"><?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></div>
+			<div class="comments-link"><?php //comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></div>
 		</article>
 	<?php endwhile; ?>
 	

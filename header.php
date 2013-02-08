@@ -39,9 +39,7 @@
 </script>
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/basic.css" media="screen, handheld" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/mobile.css" media="only screen and (min-width: 320px) and (max-width: 640px)" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/desktop.css" media="only screen and (min-width: 640px)" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css" />
 
 <!-- JS -->
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
@@ -60,16 +58,4 @@
 	    </a>
   			<?php /* I'LL NEED TO PUT THIS BACK IN LATER IN PLACE OF THE IMAGE
 	      AS THE OPTION TO HAVE A TEXT HEADER bloginfo('name'); */?>
-		
-		<nav>
-			<?php wp_nav_menu(array(
-			    'sort_column' => 'menu_order',
-			    'container_class' => 'menu-header',
-			    'menu' => 'Header',
-			    'container' => '',
-			    'show_home' => 'Blog',
-			    'exclude' => '1175, 1177, 3, 4',
-			    'items_wrap' => '%3$s'
-			)); ?>
-		</nav>
 	</header>

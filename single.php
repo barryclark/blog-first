@@ -14,7 +14,7 @@
             <?php } ?>
             <?php the_content('<p>Read the rest of this entry &raquo;</p>'); ?>
 			<?php wp_link_pages( 'before=<p class="link-pages">Page: ' ); ?>
-			<?php comments_template(); ?>
+			<?php //comments_template(); ?>
 		</article>
 	<?php endwhile; else: ?>
 		<p>Sorry, no posts matched your criteria.</p>
