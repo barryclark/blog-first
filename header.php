@@ -52,10 +52,22 @@
 
 	<div class="wrapper">
 	    		
-	<header>
-	    <a class="logo" href="<?php echo home_url(); ?>/">
-	    	<img src="<?php bloginfo('template_directory'); ?>/images/logo.png" />
-	    </a>
-  			<?php /* I'LL NEED TO PUT THIS BACK IN LATER IN PLACE OF THE IMAGE
-	      AS THE OPTION TO HAVE A TEXT HEADER bloginfo('name'); */?>
+	<header class="clearfix">
+	    
+  	<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+    <h2>I build things. Product, UX, Developer.</h2>
+    <!--<h2>Tech startup & product guy in NYC.</h2>-->
+    <hr />  
+    <div class="social">
+      <a href="https://twitter.com/baznyc" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/twitter.png" /></a>
+      <a href="https://www.linkedin.com/in/bazclark/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/linkedin.png" /></a>
+      <a href="feed/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/rss.png" /></a>
+    </div>
+    <hr />  
+      <!--<a class="profile-pic" href="<?php echo home_url(); ?>/">
+        <img src="<?php bloginfo('template_directory'); ?>/images/baz-circle.png" />
+      </a>-->
+
+
+
 	</header>

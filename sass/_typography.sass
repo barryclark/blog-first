@@ -2,17 +2,17 @@
 body 
   font-family: $serif
   font-size: 1.1em
-  line-height: 1.4em
+  line-height: 1.5em
   @include full-width
-    font-size: 1.3em //21px
-    line-height: 1.6em //32px
+    font-size: 1.25em // 20px
+    line-height: 1.57em // 30px
   p
     margin: 0 0 0.6em // 13px
     color: #272727
   a
     text-decoration: none
     color: $blue
-    &:hover
+    &:hover, &:active
       color: lighten($blue, 5%)
       @include transition(color .1s linear)
 
