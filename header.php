@@ -56,8 +56,7 @@
 	    
   	<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
     <h2>I build things. Product, UX, Developer.</h2>
-    <!--<h2>Tech startup & product guy in NYC.</h2>-->
-    <hr />  
+
     <div class="social">
       <a href="https://twitter.com/baznyc" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/twitter.png" /></a>
       <a href="https://www.linkedin.com/in/bazclark/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/linkedin.png" /></a>
