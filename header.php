@@ -27,7 +27,7 @@
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-2530088-4']);
-  _gaq.push(['_setDomainName', 'bazclark.com']);
+  _gaq.push(['_setDomainName', 'barryclark.co']);
   _gaq.push(['_trackPageview']);
 
   (function() {

@@ -7,7 +7,7 @@ $yellow: #EDC951
 
 // Grays
 $black: #000
-$darkerGray: #222
+$darkerGray: #272727
 $darkGray: #444
 $gray: #777
 $lightGray: #aaa
@@ -20,8 +20,13 @@ $sansSerif: "Helvetica Neue", Helvetica, Arial, sans-serif
 $headerName: Georgia, Cambria, serif
 
 // Define the full width of the content area, including margins
-$full-width: 36em !default
+$full-width: 37em !default 
 $mobile-width: 22em !default
+
+// Define font-size and line height together
+@mixin font-size-line-height($font-size, $line-height)
+  font-size: $font-size
+  line-height: $line-height
 
 // Media query specifications
 @mixin full-width

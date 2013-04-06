@@ -7,8 +7,6 @@
 
 // My Imports
 @import "variables.sass"
-@import "typography.sass"
-//@import "forms.sass"
 
 // Specify the color of the selection
 ::-moz-selection 
@@ -37,44 +35,100 @@ html
  
 body
   max-width: $full-width
-  margin: 0 auto  
+  margin: 0 auto
+
+  // Body text  
+  font-family: $serif
+  color: $darkerGray
+  @include font-size-line-height(1em, 1.4em)
+  @include full-width
+    @include font-size-line-height(1.2em, 1.45em)
+  p
+    margin: 0 0 1.3em
+  a
+    text-decoration: none
+    color: $blue
+    &:hover, &:active
+      color: lighten($blue, 7%)
+      @include transition(color .1s linear)
+  h1, h2, h3
+    a
+      color: $darkerGray
+    a:hover
+      color: $darkerGray
 
 .wrapper
   max-width: 94%
   margin: 0 auto
 
+// The masthead/header area of the site
 header
   margin-bottom: 1em
+  // The title or name of the site
   h1
-    font-size: 2.7em
+    @include font-size-line-height(2.8em, 1.3em)
+    @include full-width
+      @include font-size-line-height(2.8em, 1.3em)
     font-family: $headerName
     font-weight: 400
     margin: 0.4em 0 0.2em 0
     color: #171717
     text-align: center
+  // The description of the site
   h2
+    @include font-size-line-height(1.1em, 1.1em)
+    @include full-width
+      @include font-size-line-height(1.1em, 1.2em)
     color: #888
     font-size: 1em
     margin-bottom: 1em
     text-align: center
-  hr 
-    width: 34em
+    font-family: $sansSerif
+    text-rendering: optimizelegibility
+    font-weight: 300
+    letter-spacing: -1px
   .social
     text-align: center
-    margin-bottom: 1em
+    margin-bottom: 0.9em
     img
       width: 32px
       margin: 0 0.4em
 
-// Little margin at the top of each post
-article.post
-  margin-top: 1.5em
-
-// Shadows on images by default
-article img
-  @include box-shadow($lightGray 0px 1px 2px)
-article img.noshadow
-  @include box-shadow(none)
+// Blog posts
+article
+  margin-bottom: 2em
+  // Shadows on images by default
+  img
+    @include box-shadow($lightGray 0px 1px 2px)
+  img.noshadow
+    @include box-shadow(none)
+  // Post timestamps
+  time
+    color: #878787
+    vertical-align: text-top
+    @include font-size-line-height(0.75em, 1.2em)
+  .page time
+    display: none
+  // Post titles
+  h1
+    font-weight: 300
+    letter-spacing: -1px
+    @include font-size-line-height(1.5em, 1.2em)
+    @include full-width
+      @include font-size-line-height(1.6em, 1.3em)
+  // h2-h4 are for use within post content
+  h2
+    font-weight: 600
+    @include font-size-line-height(1.1em, 1.5em)
+    //@include full-width
+    //  @include font-size-line-height(1.1em, 1.5em)
+  h3
+    font-weight: 600
+    @include font-size-line-height(1em, 1.4em)
+    //@include full-width
+    //  @include font-size-line-height(1em, 1.4em)
+  h4, strong, b
+    font-weight: 600
 
 // Used for floating inline images/captions right and left
 .alignleft
@@ -108,11 +162,55 @@ article img.noshadow
 
 footer
   +clearfix
-  margin-top: 40px  
-  padding: 1% 3%
-  .archives
-    float: left
-  .search 
-    display: none
-  h4
-    text-align: center
+  margin: 1em 0 1em 0
+  padding: 1% 2%
+  hr
+    margin-bottom: 1em
+  p
+    margin: 0 0 0.4em 0
+    float: right
+    @include font-size-line-height(0.9em, 1em)
+    @include full-width
+      @include font-size-line-height(0.8em, 1.2em)
+  span
+    margin: 0 0 0.4em 0
+    float: right
+    @include font-size-line-height(0.6em, 0.6em)
+    @include full-width
+      @include font-size-line-height(0.7em, 0.7em)
+  .about-me
+    +clearfix
+    @include full-width
+      float: left
+      width: 65%
+    .profile-pic
+      float: left
+      width: 25%
+      padding-right: 2%
+    .linkedin-button img
+      height: 20px
+    p, h3
+      line-height: 1.4em
+      float: none
+  .connect-with-me
+    @include full-width
+      float: right
+      width: 32%
+    p, h3
+      line-height: 1.4em
+      float: none
+
+// The footer area of the site
+footer 
+  p
+    margin: 0 0 0.4em 0
+    float: right
+    @include font-size-line-height(0.9em, 1.0em)
+    @include full-width
+      @include font-size-line-height(0.8em, 1.2em)
+  span
+    margin: 0 0 0.4em 0
+    float: right
+    @include font-size-line-height(0.6em, 0.6em)
+    @include full-width
+      @include font-size-line-height(0.7em, 0.7em)

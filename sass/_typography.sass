@@ -1,13 +1,13 @@
-// Body text
+// Default typography settings
 body 
   font-family: $serif
-  font-size: 1.1em
-  line-height: 1.5em
+  font-size: 1em
+  line-height: 1.4em
   @include full-width
-    font-size: 1.25em // 20px
-    line-height: 1.57em // 30px
+    font-size: 1.2em
+    line-height: 1.45em
   p
-    margin: 0 0 0.6em // 13px
+    margin: 0 0 1em
     color: #272727
   a
     text-decoration: none
@@ -15,61 +15,31 @@ body
     &:hover, &:active
       color: lighten($blue, 5%)
       @include transition(color .1s linear)
+  h1, h2, h3
+    font-family: $sansSerif
+    text-rendering: optimizelegibility
+    font-weight: 300
+    letter-spacing: -1px
+    a
+      color: #171717
+    a:hover
+      color: #171717
 
-// Headings
-h1, h2
-  font-family: $sansSerif
-  text-rendering: optimizelegibility
-  font-weight: 300
-  letter-spacing: -1px
-  a
-    color: #171717
-  a:hover
-    color: #171717
-
-// Post headings
-h1  
-  font-size: 1.3em
-  line-height: 1.2em
-  margin-bottom: 5px
-  @include full-width
-    font-size: 1.45em
-    line-height: 1.25em
-
-// ???
-h2  
-  font-size: 1.0em
-  line-height: 1.1em
-  @include full-width
-    font-size: 1.1em
-    line-height: 1.2em
-
-// For use within blog posts
-h3  
-  font-size: 0.9em
-  line-height: 1.0em
-  @include full-width
-    font-size: 1em
-    line-height: 1.1em
-
-// Footer
-footer h4
-  font-size: 0.6em
-  line-height: 0.6em
-  @include full-width
-    font-size: 0.7em
-    line-height: 0.7em
-
-// For use within blog posts
-h4, strong, b
-  font-weight: 600
-
-// Post timestamps
-time
-  color: #878787
-  vertical-align: text-top
-  font-size: 0.7em
-  line-height: 0.7em
-  // @include full-width
-  //   font-size: 0.7em
-  //   line-height: 0.7em
+// The footer area of the site
+footer 
+  p
+    margin: 0 0 0.4em 0
+    float: right
+    font-size: 0.9em
+    line-height: 1.0em
+    @include full-width
+      font-size: 0.8em
+      line-height: 1.2em
+  span
+    margin: 0 0 0.4em 0
+    float: right
+    font-size: 0.6em
+    line-height: 0.6em
+    @include full-width
+      font-size: 0.7em
+      line-height: 0.7em
