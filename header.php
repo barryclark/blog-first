@@ -53,19 +53,19 @@
 	<div class="wrapper">
 	    		
 	<header class="clearfix">
-	    
+	  <a class="profile-pic" href="<?php echo home_url(); ?>/">
+      <img src="<?php bloginfo('template_directory'); ?>/images/baz-circle.png" />
+    </a>
   	<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
     <h2>I build things. Product, UX, Developer.</h2>
 
-    <div class="social">
+    <!-- <div class="social">
       <a href="https://twitter.com/baznyc" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/twitter.png" /></a>
       <a href="https://www.linkedin.com/in/bazclark/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/linkedin.png" /></a>
       <a href="feed/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/rss.png" /></a>
     </div>
-    <hr />  
-      <!--<a class="profile-pic" href="<?php echo home_url(); ?>/">
-        <img src="<?php bloginfo('template_directory'); ?>/images/baz-circle.png" />
-      </a>-->
+     --><hr />  
+      
 
 
 

@@ -54,17 +54,8 @@
 		        </a>
 		    </div>
 
-	        <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects. Director of Tech Product at <a href="https://twitter.com/dosomething">@DoSomething</a>. I tweet at <a href="https://twitter.com/baznyc">@BazNYC</a>.</p>
-
-	        <ul class="profile-links">
-	            <li class="profile-link"><a href="/">Latest Posts</a></li>
-	            <!--<li class="profile-link"><a href="/">Archive</a></li>-->
-	            <li class="profile-link"><a href="/bucket-list">Bucket List</a></li>
-	        </ul>
-	        <div style="display:none;">
+	        <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects. Director of Tech Product at <a href="https://twitter.com/dosomething">@DoSomething</a>. I tweet at <a href="https://twitter.com/baznyc">@BazNYC</a>. Check out my <a href="/">Latest Posts</a> and <a href="/bucket-list">Bucket List</a>.</p>
 	    </div>
-
-        <div style="display:none;">
     </div>
 </aside>
 

@@ -1,12 +1,12 @@
-<?php get_sidebar(); ?>
-
 <?php get_header(); ?>
+
+<?php get_sidebar(); ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<div class="post-title">
 				<h1><?php the_title(); ?></h1>
-				<time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('F jS, Y') ?></time> <!-- by <?php the_author() ?> -->
+				<time datetime="<?php the_time('Y-m-d') ?>" pubdate><span class="name" ><a href="/">Barry Clark</a> - </span><?php the_time('F jS, Y') ?></time> <!-- by <?php the_author() ?> -->
 			</div>
 			<?php if (has_post_thumbnail()) { ?>
 		        <a href="<?php the_permalink() ?>">
@@ -59,17 +59,8 @@
 		        </a>
 		    </div>
 
-	        <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects. Director of Tech Product at <a href="https://twitter.com/dosomething">@DoSomething</a>. I tweet at <a href="https://twitter.com/baznyc">@BazNYC</a>.</p>
-
-	        <ul class="profile-links">
-	            <li class="profile-link"><a href="/">Latest Posts</a></li>
-	            <!--<li class="profile-link"><a href="/">Archive</a></li>-->
-	            <li class="profile-link"><a href="/bucket-list">Bucket List</a></li>
-	        </ul>
-	        <div style="display:none;">
+	        <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects. Director of Tech Product at <a href="https://twitter.com/dosomething">@DoSomething</a>. I tweet at <a href="https://twitter.com/baznyc">@BazNYC</a>. Check out my <a href="/">Latest Posts</a> and <a href="/bucket-list">Bucket List</a>.</p>
 	    </div>
-
-        <div style="display:none;">
     </div>
 </aside>
 

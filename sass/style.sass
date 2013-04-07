@@ -50,12 +50,17 @@ body
 .wrapper
   max-width: 94%
   margin: 0 auto
-  margin-top: 2.5em
+  margin-top: 0
+  @include add-sidebar-width
+    margin-top: 2.5em
 
 // The masthead/header area of the site
 header
-  display: none
   margin-bottom: 1em
+  text-align: center
+  .profile-pic img
+    margin: 15px 0 -25px 0
+    width: 110px
   // The title or name of the site
   h1
     @include font-size-line-height(2.8em, 1.3em)
@@ -63,7 +68,6 @@ header
     font-weight: 400
     margin: 0.4em 0 0.2em 0
     color: #171717
-    text-align: center
   // The description of the site
   h2
     @include font-size-line-height(1.1em, 1.1em)
@@ -72,17 +76,23 @@ header
     color: #888
     font-size: 1em
     margin-bottom: 1em
-    text-align: center
     font-family: $sansSerif
     text-rendering: optimizelegibility
     font-weight: 300
     letter-spacing: -1px
   .social
-    text-align: center
     margin-bottom: 0.9em
     img
       width: 32px
       margin: 0 0.4em
+  @include add-sidebar-width
+    display: none
+
+body.single, body.page
+  .wrapper
+    margin-top: 2.5em 
+  header
+    display: none
 
 // Blog posts
 article
@@ -100,6 +110,9 @@ article
     vertical-align: text-top
     @include font-size-line-height(0.75em, 1.2em)
     margin-bottom: 20px
+    @include add-sidebar-width()
+      .name
+        display: none
   .page time
     display: none
   // Post titles
@@ -138,8 +151,9 @@ article
   .newer
     float: left
 
-// Side profile in desktop view
+// Profile info about me
 .profile
+  // Desktop view: on the left hand side
   .profile-side
     display: none
     @include add-sidebar-width
@@ -166,15 +180,17 @@ article
         a
           @include font-size-line-height(0.8em, 0.8em)
           color: #999
+  // Mobile view: at the bottom of the content
   .profile-bottom
     hr
       margin: 40px 0 20px 0
     .profile-pic
       float: left
-      width: 20%
+      width: 25%
+      margin-bottom: 20px
     .profile-data
       float: right
-      width: 80%
+      width: 72%
     .profile-name
       float: left
       @include font-size-line-height(1.1em, 1.3em)
@@ -182,84 +198,35 @@ article
       font-family: $headerName
       font-weight: 400
       width: 70%
-      margin: 0 10px 0 20px
     .profile-description
       float: left
       @include font-size-line-height(0.8em, 1.4em)
       color: $gray
       font-style: italic
-      width: 275px
-      margin: 0 10px 0 20px
-      border-right: 1px solid #dededc
-      padding-right: 25px
+      width: 100%
     .profile-links
       float: left
-      width: 80px
-      margin-left: 20px
       a
         @include font-size-line-height(0.8em, 0.8em)
         color: #999
+    // Between mobile and desktop tweaks
+    @include full-width
+      .profile-pic
+        width: 20%
+      .profile-data
+        width: 80%
+      .profile-name
+        margin: 0 10px 0 20px
+      .profile-description
+        width: 350px
+        margin: 0 10px 0 20px
     @include add-sidebar-width
       display: none
 
-// done the desktop bottom bar width, just need to do the mobile bottom bar width now...
-// then tidy up all of the CSS, as I'm pretty sure that it's terrible...
 // there are a bunch of weird little issues between single pieces of content and the homepage view too. 
 
 footer
-  +clearfix
   margin: 1em 0 1em 0
-  padding: 1% 2%
-  hr
-    margin-bottom: 1em
-  p
-    margin: 0 0 0.4em 0
-    float: right
-    @include font-size-line-height(0.9em, 1em)
-    @include full-width
-      @include font-size-line-height(0.8em, 1.2em)
-  span
-    margin: 0 0 0.4em 0
-    float: right
-    @include font-size-line-height(0.6em, 0.6em)
-    @include full-width
-      @include font-size-line-height(0.7em, 0.7em)
-  .about-me
-    +clearfix
-    @include full-width
-      float: left
-      width: 65%
-    .profile-pic
-      float: left
-      width: 25%
-      padding-right: 2%
-    .linkedin-button img
-      height: 20px
-    p, h3
-      line-height: 1.4em
-      float: none
-  .connect-with-me
-    @include full-width
-      float: right
-      width: 32%
-    p, h3
-      line-height: 1.4em
-      float: none
-
-// The footer area of the site
-footer 
-  p
-    margin: 0 0 0.4em 0
-    float: right
-    @include font-size-line-height(0.9em, 1.0em)
-    @include full-width
-      @include font-size-line-height(0.8em, 1.2em)
-  span
-    margin: 0 0 0.4em 0
-    float: right
-    @include font-size-line-height(0.6em, 0.6em)
-    @include full-width
-      @include font-size-line-height(0.7em, 0.7em)
 
 // Specify the color of the selection
 ::-moz-selection 
