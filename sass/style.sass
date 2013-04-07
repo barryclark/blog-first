@@ -8,20 +8,6 @@
 // My Imports
 @import "variables.sass"
 
-// Specify the color of the selection
-::-moz-selection 
-  color: #000
-  background: $orange
-::selection     
-  color: #000
-  background: $orange
-
-hr
-  border: 0
-  height: 0
-  border-top: 1px solid rgba(0, 0, 0, 0.1)
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3)
-
 img
   max-width: 100%
   height: auto
@@ -44,31 +30,35 @@ body
   @include full-width
     @include font-size-line-height(1.2em, 1.45em)
   p
-    margin: 0 0 1.3em
+    margin: 0 0 1.2em
   a
     text-decoration: none
     color: $blue
     &:hover, &:active
       color: lighten($blue, 7%)
       @include transition(color .1s linear)
+  
+  // Prevent headers from being styled like links
   h1, h2, h3
     a
       color: $darkerGray
     a:hover
       color: $darkerGray
 
+// Side padding for when we get to slim widths
+// ******* should shift this and do it on the body element as a margin
 .wrapper
   max-width: 94%
   margin: 0 auto
+  margin-top: 2.5em
 
 // The masthead/header area of the site
 header
+  display: none
   margin-bottom: 1em
   // The title or name of the site
   h1
     @include font-size-line-height(2.8em, 1.3em)
-    @include full-width
-      @include font-size-line-height(2.8em, 1.3em)
     font-family: $headerName
     font-weight: 400
     margin: 0.4em 0 0.2em 0
@@ -97,6 +87,8 @@ header
 // Blog posts
 article
   margin-bottom: 2em
+  .post-title
+    margin-bottom: 10px
   // Shadows on images by default
   img
     @include box-shadow($lightGray 0px 1px 2px)
@@ -107,6 +99,7 @@ article
     color: #878787
     vertical-align: text-top
     @include font-size-line-height(0.75em, 1.2em)
+    margin-bottom: 20px
   .page time
     display: none
   // Post titles
@@ -130,21 +123,6 @@ article
   h4, strong, b
     font-weight: 600
 
-// Used for floating inline images/captions right and left
-.alignleft
-  @include full-width
-    display: inline
-    float: left
-    margin-right: 0.5em
-.alignright
-  @include full-width
-    display: inline
-    float: right
-    margin-left: 0.5em
-.wp-caption-text
-  font-size: 17px
-
-
 // Older Posts and Newer Posts buttons
 .pagination
   +clearfix
@@ -159,6 +137,74 @@ article
     float: right
   .newer
     float: left
+
+// Side profile in desktop view
+.profile
+  .profile-side
+    display: none
+    @include add-sidebar-width
+      display: block
+      position: relative
+      width: 180px
+      margin-left: -230px
+      border-top: 0
+      padding-top: 0
+      float: left
+      .profile-pic
+        width: 100px
+      .profile-name
+        @include font-size-line-height(1.1em, 1.3em)
+        color: $blue
+        font-family: $headerName
+        font-weight: 400
+        margin: 8px 0 2px 0
+      .profile-description
+        @include font-size-line-height(0.8em, 1.4em)
+        color: $gray
+        font-style: italic
+      .profile-links
+        a
+          @include font-size-line-height(0.8em, 0.8em)
+          color: #999
+  .profile-bottom
+    hr
+      margin: 40px 0 20px 0
+    .profile-pic
+      float: left
+      width: 20%
+    .profile-data
+      float: right
+      width: 80%
+    .profile-name
+      float: left
+      @include font-size-line-height(1.1em, 1.3em)
+      color: $blue
+      font-family: $headerName
+      font-weight: 400
+      width: 70%
+      margin: 0 10px 0 20px
+    .profile-description
+      float: left
+      @include font-size-line-height(0.8em, 1.4em)
+      color: $gray
+      font-style: italic
+      width: 275px
+      margin: 0 10px 0 20px
+      border-right: 1px solid #dededc
+      padding-right: 25px
+    .profile-links
+      float: left
+      width: 80px
+      margin-left: 20px
+      a
+        @include font-size-line-height(0.8em, 0.8em)
+        color: #999
+    @include add-sidebar-width
+      display: none
+
+// done the desktop bottom bar width, just need to do the mobile bottom bar width now...
+// then tidy up all of the CSS, as I'm pretty sure that it's terrible...
+// there are a bunch of weird little issues between single pieces of content and the homepage view too. 
 
 footer
   +clearfix
@@ -214,3 +260,31 @@ footer
     @include font-size-line-height(0.6em, 0.6em)
     @include full-width
       @include font-size-line-height(0.7em, 0.7em)
+
+// Specify the color of the selection
+::-moz-selection 
+  color: #000
+  background: $orange
+::selection     
+  color: #000
+  background: $orange
+
+hr
+  border: 0
+  height: 0
+  border-top: 1px solid rgba(0, 0, 0, 0.1)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+
+// Used for floating inline images/captions right and left
+.alignleft
+  @include full-width
+    display: inline
+    float: left
+    margin-right: 0.5em
+.alignright
+  @include full-width
+    display: inline
+    float: right
+    margin-left: 0.5em
+.wp-caption-text
+  font-size: 17px

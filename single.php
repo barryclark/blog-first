@@ -1,9 +1,13 @@
+<?php get_sidebar(); ?>
+
 <?php get_header(); ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<h1><?php the_title(); ?></h1>
-			<time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('F jS, Y') ?></time> <!-- by <?php the_author() ?> -->
+			<div class="post-title">
+				<h1><?php the_title(); ?></h1>
+				<time datetime="<?php the_time('Y-m-d') ?>" pubdate><?php the_time('F jS, Y') ?></time> <!-- by <?php the_author() ?> -->
+			</div>
 			<?php if (has_post_thumbnail()) { ?>
 		        <a href="<?php the_permalink() ?>">
 		            <?php
@@ -36,5 +40,37 @@
 	<?php endwhile; else: ?>
 		<p>Sorry, no posts matched your criteria.</p>
 	<?php endif; ?>
+
+<aside class="profile">
+    <div class="profile-bottom">
+
+    	<hr/>
+
+        <div class="profile-pic">
+	        <a href="<?php echo home_url(); ?>/">
+	          <img src="<?php bloginfo('template_directory'); ?>/images/baz-circle.png" />
+	        </a>
+	    </div>
+
+        <div class="profile-data">
+	        <div class="profile-name">
+		        <a href="<?php echo home_url(); ?>/">
+		          <h1>Barry Clark</h1>
+		        </a>
+		    </div>
+
+	        <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects. Director of Tech Product at <a href="https://twitter.com/dosomething">@DoSomething</a>. I tweet at <a href="https://twitter.com/baznyc">@BazNYC</a>.</p>
+
+	        <ul class="profile-links">
+	            <li class="profile-link"><a href="/">Latest Posts</a></li>
+	            <!--<li class="profile-link"><a href="/">Archive</a></li>-->
+	            <li class="profile-link"><a href="/bucket-list">Bucket List</a></li>
+	        </ul>
+	        <div style="display:none;">
+	    </div>
+
+        <div style="display:none;">
+    </div>
+</aside>
 
 <?php get_footer(); ?>

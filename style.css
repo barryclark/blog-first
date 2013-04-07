@@ -40,20 +40,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-::-moz-selection {
-  color: black;
-  background: #eb6841; }
-
-::selection {
-  color: black;
-  background: #eb6841; }
-
-hr {
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-
 img {
   max-width: 100%;
   height: auto;
@@ -64,25 +50,25 @@ img {
   border-radius: 3px; }
 
 img.size-full {
-  width: 37em; }
+  width: 33em; }
 
 html {
   border-top: solid 6px #00a0b0;
   border-bottom: solid 6px #00a0b0; }
 
 body {
-  max-width: 37em;
+  max-width: 33em;
   margin: 0 auto;
   font-family: Cambria, Georgia, serif;
   color: #272727;
   font-size: 1em;
   line-height: 1.4em; }
-  @media screen and (min-width: 37em) {
+  @media screen and (min-width: 33em) {
     body {
       font-size: 1.2em;
       line-height: 1.45em; } }
   body p {
-    margin: 0 0 1.3em; }
+    margin: 0 0 1.2em; }
   body a {
     text-decoration: none;
     color: #00a0b0; }
@@ -99,9 +85,11 @@ body {
 
 .wrapper {
   max-width: 94%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 2.5em; }
 
 header {
+  display: none;
   margin-bottom: 1em; }
   header h1 {
     font-size: 2.8em;
@@ -111,10 +99,6 @@ header {
     margin: 0.4em 0 0.2em 0;
     color: #171717;
     text-align: center; }
-    @media screen and (min-width: 37em) {
-      header h1 {
-        font-size: 2.8em;
-        line-height: 1.3em; } }
   header h2 {
     font-size: 1.1em;
     line-height: 1.1em;
@@ -126,7 +110,7 @@ header {
     text-rendering: optimizelegibility;
     font-weight: 300;
     letter-spacing: -1px; }
-    @media screen and (min-width: 37em) {
+    @media screen and (min-width: 33em) {
       header h2 {
         font-size: 1.1em;
         line-height: 1.2em; } }
@@ -139,6 +123,8 @@ header {
 
 article {
   margin-bottom: 2em; }
+  article .post-title {
+    margin-bottom: 10px; }
   article img {
     -webkit-box-shadow: #aaaaaa 0px 1px 2px;
     -moz-box-shadow: #aaaaaa 0px 1px 2px;
@@ -151,7 +137,8 @@ article {
     color: #878787;
     vertical-align: text-top;
     font-size: 0.75em;
-    line-height: 1.2em; }
+    line-height: 1.2em;
+    margin-bottom: 20px; }
   article .page time {
     display: none; }
   article h1 {
@@ -159,7 +146,7 @@ article {
     letter-spacing: -1px;
     font-size: 1.5em;
     line-height: 1.2em; }
-    @media screen and (min-width: 37em) {
+    @media screen and (min-width: 33em) {
       article h1 {
         font-size: 1.6em;
         line-height: 1.3em; } }
@@ -173,21 +160,6 @@ article {
     line-height: 1.4em; }
   article h4, article strong, article b {
     font-weight: 600; }
-
-@media screen and (min-width: 37em) {
-  .alignleft {
-    display: inline;
-    float: left;
-    margin-right: 0.5em; } }
-
-@media screen and (min-width: 37em) {
-  .alignright {
-    display: inline;
-    float: right;
-    margin-left: 0.5em; } }
-
-.wp-caption-text {
-  font-size: 17px; }
 
 .pagination {
   overflow: hidden;
@@ -208,6 +180,74 @@ article {
   .pagination .newer {
     float: left; }
 
+.profile .profile-side {
+  display: none; }
+  @media screen and (min-width: 74em) {
+    .profile .profile-side {
+      display: block;
+      position: relative;
+      width: 180px;
+      margin-left: -230px;
+      border-top: 0;
+      padding-top: 0;
+      float: left; }
+      .profile .profile-side .profile-pic {
+        width: 100px; }
+      .profile .profile-side .profile-name {
+        font-size: 1.1em;
+        line-height: 1.3em;
+        color: #00a0b0;
+        font-family: Georgia, Cambria, serif;
+        font-weight: 400;
+        margin: 8px 0 2px 0; }
+      .profile .profile-side .profile-description {
+        font-size: 0.8em;
+        line-height: 1.4em;
+        color: #666666;
+        font-style: italic; }
+      .profile .profile-side .profile-links a {
+        font-size: 0.8em;
+        line-height: 0.8em;
+        color: #999999; } }
+.profile .profile-bottom hr {
+  margin: 40px 0 20px 0; }
+.profile .profile-bottom .profile-pic {
+  float: left;
+  width: 20%; }
+.profile .profile-bottom .profile-data {
+  float: right;
+  width: 80%; }
+.profile .profile-bottom .profile-name {
+  float: left;
+  font-size: 1.1em;
+  line-height: 1.3em;
+  color: #00a0b0;
+  font-family: Georgia, Cambria, serif;
+  font-weight: 400;
+  width: 70%;
+  margin: 0 10px 0 20px; }
+.profile .profile-bottom .profile-description {
+  float: left;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  color: #666666;
+  font-style: italic;
+  width: 275px;
+  margin: 0 10px 0 20px;
+  border-right: 1px solid #dededc;
+  padding-right: 25px; }
+.profile .profile-bottom .profile-links {
+  float: left;
+  width: 80px;
+  margin-left: 20px; }
+  .profile .profile-bottom .profile-links a {
+    font-size: 0.8em;
+    line-height: 0.8em;
+    color: #999999; }
+@media screen and (min-width: 74em) {
+  .profile .profile-bottom {
+    display: none; } }
+
 footer {
   overflow: hidden;
   *zoom: 1;
@@ -220,7 +260,7 @@ footer {
     float: right;
     font-size: 0.9em;
     line-height: 1em; }
-    @media screen and (min-width: 37em) {
+    @media screen and (min-width: 33em) {
       footer p {
         font-size: 0.8em;
         line-height: 1.2em; } }
@@ -229,14 +269,14 @@ footer {
     float: right;
     font-size: 0.6em;
     line-height: 0.6em; }
-    @media screen and (min-width: 37em) {
+    @media screen and (min-width: 33em) {
       footer span {
         font-size: 0.7em;
         line-height: 0.7em; } }
   footer .about-me {
     overflow: hidden;
     *zoom: 1; }
-    @media screen and (min-width: 37em) {
+    @media screen and (min-width: 33em) {
       footer .about-me {
         float: left;
         width: 65%; } }
@@ -249,7 +289,7 @@ footer {
     footer .about-me p, footer .about-me h3 {
       line-height: 1.4em;
       float: none; }
-  @media screen and (min-width: 37em) {
+  @media screen and (min-width: 33em) {
     footer .connect-with-me {
       float: right;
       width: 32%; } }
@@ -262,7 +302,7 @@ footer p {
   float: right;
   font-size: 0.9em;
   line-height: 1em; }
-  @media screen and (min-width: 37em) {
+  @media screen and (min-width: 33em) {
     footer p {
       font-size: 0.8em;
       line-height: 1.2em; } }
@@ -271,7 +311,36 @@ footer span {
   float: right;
   font-size: 0.6em;
   line-height: 0.6em; }
-  @media screen and (min-width: 37em) {
+  @media screen and (min-width: 33em) {
     footer span {
       font-size: 0.7em;
       line-height: 0.7em; } }
+
+::-moz-selection {
+  color: black;
+  background: #eb6841; }
+
+::selection {
+  color: black;
+  background: #eb6841; }
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+@media screen and (min-width: 33em) {
+  .alignleft {
+    display: inline;
+    float: left;
+    margin-right: 0.5em; } }
+
+@media screen and (min-width: 33em) {
+  .alignright {
+    display: inline;
+    float: right;
+    margin-left: 0.5em; } }
+
+.wp-caption-text {
+  font-size: 17px; }

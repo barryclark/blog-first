@@ -9,7 +9,7 @@ $yellow: #EDC951
 $black: #000
 $darkerGray: #272727
 $darkGray: #444
-$gray: #777
+$gray: #666
 $lightGray: #aaa
 $lighterGray: #eee
 $white: #fff
@@ -20,8 +20,9 @@ $sansSerif: "Helvetica Neue", Helvetica, Arial, sans-serif
 $headerName: Georgia, Cambria, serif
 
 // Define the full width of the content area, including margins
-$full-width: 37em !default 
 $mobile-width: 22em !default
+$full-width: 33em !default 
+$add-sidebar-width: 74em !default 
 
 // Define font-size and line height together
 @mixin font-size-line-height($font-size, $line-height)
@@ -29,9 +30,12 @@ $mobile-width: 22em !default
   line-height: $line-height
 
 // Media query specifications
-@mixin full-width
-  @media screen and (min-width: $full-width)
-    @content
 @mixin mobile-width
   @media screen and (min-width: $mobile-width)
+    @content
+@mixin add-sidebar-width
+  @media screen and (min-width: $add-sidebar-width)
+    @content
+@mixin full-width
+  @media screen and (min-width: $full-width)
     @content
