@@ -4,8 +4,10 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<h1><?php the_title(); ?></h1>
-			<time datetime="<?php the_time('Y-m-d') ?>" pubdate><span class="name" ><a href="/">Barry Clark</a> - </span><?php the_time('F jS, Y') ?></time> <!-- by <?php the_author() ?> -->
+			<div class="post-title post-title-single">
+				<h1><?php the_title(); ?></h1>
+				<time><span class="name" ><a href="/">Barry Clark</a></span></time>
+			</div>
 			<?php if (has_post_thumbnail()) { ?>
 		        <a href="<?php the_permalink() ?>">
 		            <?php
@@ -38,9 +40,10 @@
 		        </a>
 		    </div>
 
-	        <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects. Director of Tech Product at <a href="https://twitter.com/dosomething">@DoSomething</a>. I tweet at <a href="https://twitter.com/baznyc">@BazNYC</a>. Check out my <a href="/">Latest Posts</a> and <a href="/bucket-list">Bucket List</a>.</p>
+	        <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects. Director of Tech Product at <a href="https://twitter.com/dosomething" target="_blank">@DoSomething</a> in NYC, more info on my <a href="http://www.linkedin.com/in/bazclark/">Linkedin profile</a>.</p>
+	        <p class="profile-description">I tweet at <a href="https://twitter.com/baznyc" target="_blank">@BazNYC</a>. Check out my <a href="/bucket-list">Bucket List</a> and <a href="/">Latest Posts</a>.</p>
 	    </div>
     </div>
 </aside>
-	
+<a class="back-to-front-page" href="/">Back to front page</a>
 <?php get_footer(); ?>

@@ -9,13 +9,16 @@
 @import "variables.sass"
 
 img
-  max-width: 100%
+  width: 100%
   height: auto
   @include border-radius(3px)
-img.size-full
-  width: $full-width
+#disqus_thread img
+  display: none
 
 html
+  min-height: 100%
+  margin: 0
+  padding: 0
   border-top: solid 6px $blue
   border-bottom: solid 6px $blue
  
@@ -35,8 +38,8 @@ body
     text-decoration: none
     color: $blue
     &:hover, &:active
-      color: lighten($blue, 7%)
-      @include transition(color .1s linear)
+      color: lighten($blue, 8%)
+      @include transition(color .15s linear)
   
   // Prevent headers from being styled like links
   h1, h2, h3
@@ -44,9 +47,12 @@ body
       color: $darkerGray
     a:hover
       color: $darkerGray
+  a.time
+    color: $gray2
+  a.content
+    color: $darkerGray
 
 // Side padding for when we get to slim widths
-// ******* should shift this and do it on the body element as a margin
 .wrapper
   max-width: 94%
   margin: 0 auto
@@ -59,21 +65,21 @@ header
   margin-bottom: 1em
   text-align: center
   .profile-pic img
-    margin: 15px 0 -25px 0
-    width: 110px
+    margin: 10px 0 -28px 0
+    width: 80px
   // The title or name of the site
   h1
-    @include font-size-line-height(2.8em, 1.3em)
+    @include font-size-line-height(2.4em, 1.3em)
     font-family: $headerName
     font-weight: 400
-    margin: 0.4em 0 0.2em 0
-    color: #171717
+    margin: 0.4em 0 0.1em 0
+    color: $darkerGray
   // The description of the site
   h2
     @include font-size-line-height(1.1em, 1.1em)
     @include full-width
       @include font-size-line-height(1.1em, 1.2em)
-    color: #888
+    color: $gray2
     font-size: 1em
     margin-bottom: 1em
     font-family: $sansSerif
@@ -85,6 +91,13 @@ header
     img
       width: 32px
       margin: 0 0.4em
+  @include full-width
+    .profile-pic img
+      margin: 15px 0 -25px 0
+      width: 100px
+    h1
+      @include font-size-line-height(2.8em, 1.3em)
+      margin: 0.4em 0 0.1em 0
   @include add-sidebar-width
     display: none
 
@@ -96,9 +109,9 @@ body.single, body.page
 
 // Blog posts
 article
-  margin-bottom: 2em
-  .post-title
-    margin-bottom: 10px
+  margin-bottom: 1em
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06)
+  font-size: 0.9em
   // Shadows on images by default
   img
     @include box-shadow($lightGray 0px 1px 2px)
@@ -106,7 +119,7 @@ article
     @include box-shadow(none)
   // Post timestamps
   time
-    color: #878787
+    color: $gray2
     vertical-align: text-top
     @include font-size-line-height(0.75em, 1.2em)
     margin-bottom: 20px
@@ -119,37 +132,37 @@ article
   h1
     font-weight: 300
     letter-spacing: -1px
-    @include font-size-line-height(1.5em, 1.2em)
+    @include font-size-line-height(1.6em, 1.2em)
     @include full-width
-      @include font-size-line-height(1.6em, 1.3em)
+      @include font-size-line-height(1.8em, 1.3em)
   // h2-h4 are for use within post content
   h2
-    font-weight: 600
-    @include font-size-line-height(1.1em, 1.5em)
+    //font-weight: 600
+    @include font-size-line-height(1.3em, 1.5em)
+    margin: 0.5em 0
     //@include full-width
     //  @include font-size-line-height(1.1em, 1.5em)
   h3
     font-weight: 600
-    @include font-size-line-height(1em, 1.4em)
+    margin: 0.3em 0
+    //color: #555
+    //font-style: italic
+    @include font-size-line-height(1.0em, 1.4em)
     //@include full-width
     //  @include font-size-line-height(1em, 1.4em)
+  em
+    font-style: italic
   h4, strong, b
     font-weight: 600
+  ul, ol 
+    margin: 0 1.5em 1.2em
+  ul li 
+    list-style: square
 
-// Older Posts and Newer Posts buttons
-.pagination
-  +clearfix
-  margin-top: 1em
-  .older, .newer
-    max-width: 100%
-    padding: 0 2%
-    background-color: $lighterGray
-    font-size: 0.9em
-    @include border-radius(6px)
-  .older
-    float: right
-  .newer
-    float: left
+// Back to front page link that's displayed after pages
+.back-to-front-page
+  margin-bottom: 1em
+  font-size: 0.9em
 
 // Profile info about me
 .profile
@@ -179,11 +192,11 @@ article
       .profile-links
         a
           @include font-size-line-height(0.8em, 0.8em)
-          color: #999
+          color: $gray2
   // Mobile view: at the bottom of the content
   .profile-bottom
     hr
-      margin: 40px 0 20px 0
+      margin-bottom: 20px
     .profile-pic
       float: left
       width: 25%
@@ -208,7 +221,7 @@ article
       float: left
       a
         @include font-size-line-height(0.8em, 0.8em)
-        color: #999
+        color: $gray2
     // Between mobile and desktop tweaks
     @include full-width
       .profile-pic
@@ -223,35 +236,48 @@ article
     @include add-sidebar-width
       display: none
 
-// there are a bunch of weird little issues between single pieces of content and the homepage view too. 
-
 footer
   margin: 1em 0 1em 0
 
 // Specify the color of the selection
 ::-moz-selection 
-  color: #000
+  color: $black
   background: $orange
 ::selection     
-  color: #000
+  color: $black
   background: $orange
 
 hr
+  margin-bottom: 1em
   border: 0
   height: 0
-  border-top: 1px solid rgba(0, 0, 0, 0.1)
+  border-top: 1px solid rgba(0, 0, 0, 0.06)
   border-bottom: 1px solid rgba(255, 255, 255, 0.3)
 
 // Used for floating inline images/captions right and left
+.alignleft, .alignright
+  @include full-width
+    display: inline
+    margin-right: 0.5em
+    width: auto
 .alignleft
   @include full-width
-    display: inline
     float: left
-    margin-right: 0.5em
 .alignright
   @include full-width
-    display: inline
     float: right
-    margin-left: 0.5em
 .wp-caption-text
   font-size: 17px
+
+// Make embedded videos responsive
+.videoWrapper 
+  position: relative
+  padding-bottom: 56.25% /* 16:9 */
+  padding-top: 25px
+  height: 0
+  iframe, object
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%

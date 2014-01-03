@@ -1,0 +1,24 @@
+Options +FollowSymlinks 
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^bazclark.com [NC]
+RewriteRule ^(.*)$ http://barryclark.co/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www.bazclark.com [NC]
+RewriteRule ^(.*)$ http://barryclark.co/$1 [L,R=301]
+
+RedirectMatch 301 ^/([0-9]{4})/([0-9]{2})/(.*)$ http://barryclark.co/$3
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+redirect /ideas https://docs.google.com/spreadsheet/ccc?key=0AnarHN4F8CQbdG9kM2tXVTBicGNJU21jY0FMb3BOU2c
+redirect /side-projects https://docs.google.com/spreadsheet/ccc?key=0AnarHN4F8CQbdEpvTWVnd0hfVWhvNDdsR0RhSmtENmc#gid=2
+redirect /template https://docs.google.com/document/d/1n5UMX4w1M6OBhDpQincxe6-Q8WYRlAfDRP-F3znzaaU/edit

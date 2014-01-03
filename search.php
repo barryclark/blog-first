@@ -10,11 +10,6 @@
 				<?php //comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
 			</article>
 		<?php endwhile; ?>
-		<?php if (show_posts_nav()) : ?>
-			<nav class="nextPrevLinks">
-				<?php my_paginate_links(); ?>
-			</nav>
-		<?php endif; ?>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('My new sidebar') ) : ?>
 		  <!-- This will be displayed if the sidebar is empty -->
 		<?php endif; ?>

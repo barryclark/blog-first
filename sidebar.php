@@ -10,14 +10,14 @@
 
         <p class="profile-description">Builder of things. Lover of lean methodology, coding, UX and side projects.</p>
 
-        <p class="profile-description">Director of Tech Product at <a href="https://twitter.com/dosomething">@DoSomething</a>. I tweet at <a href="https://twitter.com/baznyc">@BazNYC</a>.</p>
+        <p class="profile-description">Director of Tech Product at <a href="https://twitter.com/dosomething" target="_blank">@DoSomething</a> in NYC. I tweet at <a href="https://twitter.com/baznyc" target="_blank">@BazNYC</a>.</p>
         
         <hr/>
 
         <ul class="profile-links">
             <li class="profile-link"><a href="/">Latest Posts</a></li>
-            <!--<li class="profile-link"><a href="/">Archive</a></li>-->
             <li class="profile-link"><a href="/bucket-list">Bucket List</a></li>
+            <li class="profile-link"><a href="http://www.linkedin.com/in/bazclark/">Linkedin Profile</a></li>
         </ul>
     </div>
 </aside>
